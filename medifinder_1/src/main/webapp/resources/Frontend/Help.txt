@@ -1,0 +1,15 @@
+1. Install Git :"http://git-scm.com/download/win".
+2. Open git from programs and enter the following commands:
+  a) git config --global user.name "Your Name"
+  b) git cofig --global user.email "email@gmail.com"
+  c) git clone https://sahilupadhyay@bitbucket.org/minorproject2015/med.com.git
+
+3. Then you will see that a new folder has been created.
+
+Now run the following commands each time you want to work in this project:
+[Check that you are inside the folder name "med.com" and type these commands inside the git program shell]
+1. git pull origin master
+2. git status
+3. git add .
+4. git commit -m "Commit Message"
+5. git push origin master

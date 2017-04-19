@@ -1,0 +1,150 @@
+#medifinder
+{
+	color: white;
+	text-align: center;
+	font-size: 26px;
+	padding: 40px;
+}
+div.div_1
+{
+	background-color: black;
+	margin-top: -20px;
+	display: flex;
+	width: 101%;
+	background-attachment: fixed;
+}
+
+/************************************** Search Bar ****************************************************/
+#Search_Form 
+{
+    min-width: 100px;
+    width:650px;
+    min-width: 150px;
+    min-height: 10px;
+    margin:50px auto;
+    z-index: 10;
+}
+.Search_Bar
+{
+    color: white;
+    font-size: 20px;
+    background:none;
+    box-shadow: 10px;
+	padding:8px 15px;
+    min-width: 50px;
+    min-height: 10px;
+    width: 560px;
+    min-width: 50px;
+    height: 25px;
+    background:rgba(192, 192, 192, 0.4);
+    border:3px solid silver;
+    border-radius: 5px;
+    margin-top: 6em;
+    overflow: none;
+    float: left;
+    opacity: 0.9;
+    z-index: -1;
+}
+.Search_Bar:hover
+{
+	opacity: 1.0;
+}
+.Search_Icon
+{
+	background-color: rgba(0,0,0,0);
+	opacity: 0.8;
+	border-width: 0px;
+	color: white;
+	font-size: 22px;
+	margin-top: 130px;
+
+}
+.Search_Icon:hover
+{
+	opacity: 1.0;
+	z-index: 1;
+	font-size: 24px;
+}
+/*******************************************************/
+/********************Login***************************/
+.dropdown:hover .dropdown-menu 
+{
+    display: block;
+}
+@media (min-width:768px) {
+.navbar 
+{
+    border-radius: 0px; 
+    margin-bottom: 0px;
+}}
+#asd
+{
+    margin-right: 10px;
+}
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+#footer
+{
+    background-color: black;
+}
+.footer_list
+{
+    color: white;
+    float: left;
+    margin-left: 6em;
+    margin-right: 6em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.footer_ui>li>a
+{
+    color: #9d9d9d;
+}
+.footer_ui>li>a:hover
+{
+    color: white;
+    text-decoration: none;
+}
+
+.footer_ui>li
+{
+    text-decoration: none;
+    list-style: none;
+    margin-left: -25px;
+}
+.footer_ui>li:hover
+{
+    color: white;
+}

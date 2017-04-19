@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital | MediFinder.com | Better Information, Better Health </title>
+    <link rel="shortcut icon" href="..\Images\login.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="description" content="Find Hospital in my area,Find Doctor in my area,doctor finder,drugs finder,my health status,chemist near my home,locate medicine,locate doctor,buy medicine,">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Css/hospital.css">
+    <link rel="stylesheet" type="text/css" href="../Css/font-awesome.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+    <script language="JavaScript" src="../Script/chemist_database.js" type="text/javascript"></script>
+     <!-- <link rel="stylesheet" type="text/css" href="../Css/chemist_database.css"> -->
+</head>
+<body>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default info">
+          <div class="panel-heading" id="head">
+            <div class="panel-title" id="title">
+                <i class="icon-hospital"></i>
+                <h4 class="text-center">Apollo Hospitals</h4>
+            </div>
+          </div>
+          <div class="panel-body">
+            <img src="http://www.perkinswill.com/sites/default/files/project-imagery/rush_main1_0.jpg" class="info-img img-rounded">
+            <div class="col-md-12 well well-sm">
+                <div id="business-info">
+                    <ul>
+                        <li><span><i class="fa fa-phone"></i> +91-11-29871090</span></li></br>
+                        <li><span><i class="fa fa-phone"></i> +91-11-29871091</span></li></br>
+                        <li><span><i class="fa fa-map-marker"></i>&nbspSarita Vihar, Delhi Mathura Road, New Delhi - 110076 (INDIA)</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <h4 class="keys">Key Specialities</h4>
+                <ul class="items">
+                    <li>HEART</li>
+                    <li>ORTHOPEDICS</li>
+                    <li>NEUROLOGY</li>
+                    <li>NEUROSURGERY</li>
+                    <li>SPINE</li>
+                    <li>CANCER/ONCOLOGY</li>
+                    <li>GASTROENTEROLOGY</li>
+                    <li>ROBOTIC SURGERY</li>
+                </ul>
+            </div>
+<!--             <div class="col-md-3">
+                <div class="offer text-danger">
+                    <span class="cost"><sup><i class="fa fa-inr"></i></sup></span>
+                    <span class="rupees">800</span>
+                    <span class="paisa"><sup>00</sup></span>
+                </div>
+            </div> -->
+            <div class="col-md-9">
+                <h4 class="keys"><i class="fa fa-clock-o"></i>&nbspTiming</h4>
+                <ul class="items inline" id="timing">
+                    <li id="start">10:00AM</li>
+                    <li>to</li>
+                    <li id="end">7:00PM</li>
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <p class="disclosure">Apollo Munich Health Insurance Company Limited (launched as Apollo DKV) is a joint venture between Apollo Group of Hospitals and Munich Health, one of Munich Re’s newest business segment, established in 2007 for providing healthcare solutions. The company has its registered office in Jubilee Hills, Hyderabad, Andhra Pradesh. Apollo DKV rechristened itself as Apollo Munich in 2009. Apollo Hospitals was established in 1983. At present, Apollo hospitals are present in 120 countries around the world. The group is involved in research in various areas with focus on exploring potential of robotics in the field of medical care. The group has also recognized the increasing risk of heart diseases in India and has been actively working towards this issue</p>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div class="email_address">
+                <span class="website">
+                    <a href="http://www.apollohospdelhi.com/" class="btn btn-link" target="_new"><i class="fa fa-external-link"></i>&nbspwww.apollohospdelhi.com</a>
+                </span>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<center>
+    <div class="row">
+        <div class="col-lg-12">
+          <ul class="inline">
+            <li><button class="btn btn-primary" data-title="Edit" data-toggle="modal" data-target="#edit"><i class="fa fa-pencil-square-o"></i>&nbspEdit</button></li>
+            <li><button class="btn btn-danger" data-title="Deactive" data-toggle="modal" data-target="#Deactive"  ><i class="fa fa-ban"></i>&nbspDeactive Account</button></li>
+          </ul>
+        </div>
+    </div>
+</center>
+
+<!-- MODAL DISPLAY FOR DEACTIVE ACOOUNT OR EDIT INFORMATION -->
+
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title custom_align" id="Heading">Edit Your Information</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <input class="form-control " name="name" type="text" placeholder="Hospital Name">
+        </div>
+        <div class="form-group">
+          <input class="form-control " name="address" type="text" placeholder="Address">
+        </div>
+        <div class="form-group">
+          <input class="form-control " name="city" type="text" placeholder="City">
+        </div>
+        <div class="form-group">
+          <input class="form-control " name="pincode" type="text" placeholder="Pincode">
+        </div>
+        <div class="form-group">
+          <input class="form-control " name="contact_number" type="telephone" placeholder="Contact Number">
+        </div>
+        <div class="form-group">
+          <input class="form-control " name="contact_number" type="telephone" placeholder="Optional Contact Number">
+        </div>
+        <div class="form-group">
+          <input class="form-control " name="end" type="text" placeholder=" In hh:mm Am to hh:mm PM Format">
+        </div>
+        <div class="form-group">
+          <input class="form-control " name="email" type="email" placeholder=" Email Address">
+        </div>
+        <div class="form-group">
+          <input class="form-control " name="img_url" type="url" placeholder=" Insert your image URL here">
+        </div>
+        <div class="form-group">
+            <textarea style="width:100%;" placeholder="Write your disclosure" max="800"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer ">
+        <button type="submit" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="Deactive" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title custom_align" id="Heading">Deactive Account</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure to deactive this account?</div>
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MODAL DISPLAY FOR DEACTIVE ACOOUNT OR EDIT INFORMATION END-->
+</body>
+</html>

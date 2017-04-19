@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" manifest="developers.appcache">
+<head>
+	<title>MediFinder | Better Information, Better Health </title>
+	<link rel="shortcut icon" href="..\Images\login.png" type="image/png">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Find doctor in my area,doctor finder,drugs finder,my health status,chemist near my home,locate medicine,locate doctor,buy medicine,">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script src="../Script/jquery.cookie.js"></script>
+	<script src="../Script/Signin.js"></script>
+	<script src="../Script/Dropdown.js"></script>
+	<script src="../Script/Scripts.js"></script>
+  <script src="../Script/Routes.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../Css/MediFinder.css">
+  <link rel="stylesheet" type="text/css" href="../Css/Styles.css" >
+  <script type="text/javascript" src="../Script/DoctorDatabase.js"></script>
+  <link rel="stylesheet" type="text/css" href="../Css/DoctorDatabase.css">
+</head>
+<body>
+<nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+  <div class="container" style="width:100%;">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+        <!-- <span class="sr-only">Toggle navigation</span> -->
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-collapsible">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="#section1" style="color:white !important;font-weight: 400 !important;font-size=22px !important;">MediFinder</a></li>
+        <li><a href="#section2">Drugs</a></li>
+        <li><a href="#section3">Doctor</a></li>
+        <li><a href="#section4">Pills Identifier</a></li>
+        <li><a href="#section5">Symptoms Checker</a></li>
+		    <li class="dropdown" >
+	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+	        <ul class="dropdown-menu">
+	            <li><a href="#section6">Health A-Z</a></li>
+              <li class="divider"></li>
+              <li><a href="../Html/TopStories.html">Top Stories</a></li>
+              <li class="divider"></li>
+	            <li><a href="../Html/AboutUs.html">About Us</a></li>
+	            <li class="divider"></li>
+	            <li><a href="../Html/Help.html">Help</a></li>
+	        </ul>
+        </li>
+        <!-- <li>&nbsp;</li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#search"><i class="fa fa-search"></i></a></li>
+        <li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" type="button">
+              <span class="glyphicon glyphicon-user" style="display:none;"></span>
+              <img class="img-circle" src="../Images/sahil.jpg" style="width:24px;height:24px;margin-top:0px;"> 
+              <strong>Sahil Upadhyay&nbsp</strong>
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+            <ul class="dropdown-menu after-login">
+              <li>
+                <div class="navbar-login">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <p class="text-center">
+                        <span class="glyphicon glyphicon-user icon-size" style="color:#aaa;display:none;"></span>
+                        <img src="../Images/sahil.jpg" class="img-circle user-img-size">
+                      </p>
+                    </div>
+                    <div class="col-lg-8">
+                      <p class="text-left" style="color:#222;"><strong>Sahil Upadhyay</strong></p>
+                      <p class="text-left small" style="color:#444;">sahilupadhyay0001@gmail.com</p>
+                      <p class="text-left">
+                        <a href="#" style="float:left;color:#279eee;">Change Password</a>
+                        <a href="#" style="color:#279eee;margin-left:12px;">Privacy</a>
+                      </p>
+                      <p class="text-left">
+                        <a href="#" class="btn btn-primary btn-block" >Profile</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="divider"></li>
+                <li>
+                  <div class="navbar-login navbar-login-session">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <p>
+                          <a href="#" class="btn btn-danger btn-block" style="border-radius:3px;">Log Out</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>  
+                </li>
+              </ul>
+            </li>
+          </li>
+          <li><a href="#" class="show-login" data-toggle="modal" data-target="#login-modal" ><span class="glyphicon glyphicon-log-in"></span> Member Login</a></li>
+          <li><a href="#" class="show-register" data-toggle="modal" data-target="#login-modal" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        </ul>
+      </nav>
+
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="Medicine, Doctor, Hospital, Diagnostic Centre..." />
+        <button type="submit" class="btn btn-primary search_nav">Search</button>
+    </form>
+</div>
+
+<!-- BEGIN # MODAL LOGIN -->
+    <div class="modal fade" id="login-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" align="center">
+                    <img class="img-circle" id="img_logo" src="../Images/login.png">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div id="div-forms">
+                    <form id="login-form">
+                        <div class="modal-body">
+                            <input id="login_username" class="form-control" type="text" placeholder="Username" required>
+                            <input id="login_password" class="form-control" type="password" placeholder="Password" required>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">.
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                            </div>
+                            <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link show-forgot-password">Lost Password?</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link show-register">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+                    <form id="forgot-form">
+                        <div class="modal-body">
+                        <label style="color:#375A7F;">Type your e-mail.</label>
+                            <input id="lost_email" class="form-control" type="text" placeholder="E-Mail" required>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link show-login">Log In</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link show-register">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+                    
+                    <!-- Begin | Register Form -->
+                    <form id="register-form">
+                        <div class="modal-body">
+                            <div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Register an account.</span>
+                            </div>
+                            <input id="FirstName" class="form-control" name="FirstName" class="form-control" type="text" placeholder="First Name" class="Input" required="">
+                            <input id="LastName" class="form-control" name="LastName" type="text" placeholder="Last Name" class="Input">
+                           
+                                <input type="radio" name="Gender" value="Male" style="margin:10px;">  Male
+                                <input type="radio" name="Gender" value="Female"style="margin:10px;"> Female
+                                <input type="radio" name="Gender" value="Other"style="margin:10px;">  Other
+                            <input id="email" class="form-control" name="Email" type="email" placeholder="Email Id" class="Input" required="" style="margin-bottom:8px;">
+                            <select id="workarea" class="form-control" name="work_area" class="Input" required="">
+                                <option value="" class="none">I am ...</option>
+                                <option value="doctor" class="doctor">Doctor</option>
+                                <option value="chemist" class="chemist">Chemist</option>
+                                <option value="hospital" class="hospital">Hospital</option>
+                                <option value="diagnostic_centre" class="diagnostic">Diagnostic Centre</option>
+                            </select>
+                            <input id="Speciality" class="form-control select-workarea" name="Speciality" type="text" placeholder="Speciality" class="Input" required="">
+                            <input id="store_name" class="form-control select-workarea" name="store_name" type="text" placeholder="Store Name" class="Input" required="">
+                            <input id="hospital_name" class="form-control select-workarea" name="hospital_name" type="text" placeholder="Hospital Name" class="Input" required="">
+                            <input id="diagnostic_name" class="form-control select-workarea" name="diagnostic_name" type="text" placeholder="Diagnostic Centre Name" class="Input" required="">
+                            <input id="Password" class="form-control" name="Password" type="password" placeholder="Password" class="Input  pass-confirm Password" minlength="6" required="">
+                            <input id="PasswordConfirm" class="form-control" name="Re-Enter Password" type="password" placeholder="Re-Enter Password" class="Input pass-confirm ConfirmPassword" minlength="6" required="">
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" id="signup-submit-btn" class="btn btn-primary btn-lg btn-block" disabled>Register</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link show-login">Log In</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link show-forgot-password">Lost Password?</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End | Register Form -->
+                </div>
+                <!-- End # DIV Form -->
+            </div>
+        </div>
+    </div>
+    <!-- END # MODAL LOGIN -->
+  
+<!-- End Header -->
+
+    </div>
+  </div>
+</nav>
+<section class="container-fluid" id="section2">
+  <div class="doctordata_container_doctor_database">
+    <h1 class="text-center" style="font-size:2.5em;cursor:default;color:#686868;">Dr. Govind Kumar Upadhyay</h1>
+    <h2 >MBBS, MD, Nurologist</h2>
+    <div class="doctordata_service-details" style="margin-left:100px;">
+      <img class="doctordata_img" src="https://scontent-frt3-1.xx.fbcdn.net/hphotos-xta1/v/l/t1.0-9/12038248_425834320934770_8145417806225334750_n.jpg?oh=45c37b322266c0502fd350d0fe71f80e&oe=56A6CA24" alt="GKU">
+      <div class="doctordata_service-hover-text">
+        <h3 >Dr. Govind Kumar Upadhyay</h3>
+        <h4 >Nurologist</h4>
+        <p class="doctordata_p"> This clinic only accepts walk in appointments on a first come first serve basis.Call the reception to check the availability of the doctors.</p>
+      </div>
+      <div class="doctordata_service-white doctordata_service-text">
+        <p ><i class="fa fa-clock-o" style="color:#2c3e52;margin-top:100px;margin-bottom:-5px;"></i>Timing</p>
+        <h4 style="margin-top:0px;">10:00AM-2:00PM</h4>
+        <h4 style="margin-top:0px;">4:00PM-8:00PM</h4><br><br>
+        <p style="margin-top:50px;float:left;"><i class="fa fa-inr"></i></p>
+        <h4 style="margin-left:0px;margin-top:0px;font-size:22px;margin-bottom:-10px;">500</h4>
+        <p style="margin-top:5;"><i class="fa fa-mobile"></i> Contact US</p>
+        <h4 style="margin-left:35px;margin-top:0px;font-size:16px;margin-bottom:5px;"><i class="fa fa-phone"></i> +91-8447263136</h4>
+        <h4 style="margin-left: 35px;margin-bottom:5px;"><i class="fa fa-phone"></i> +91-8447263136</h4>
+      </div>
+    </div>
+    <center>
+    <div class="row">
+        <div class="col-lg-12">
+          <ul class="inline">
+            <li><button class="btn btn-primary" data-title="Edit" data-toggle="modal" data-target="#edit"><i class="fa fa-pencil-square-o"></i>&nbspEdit</button></li>
+            <li><button class="btn btn-danger" data-title="Deactive" data-toggle="modal" data-target="#Deactive"  ><i class="fa fa-ban"></i>&nbspDeactive Account</button></li>
+          </ul>
+        </div>
+    </div>
+</center>
+
+
+<!-- MODAL DISPLAY FOR DEACTIVE ACOOUNT OR EDIT INFORMATION -->
+
+  <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title custom_align" id="Heading">Edit Your Information</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <input class="form-control " name="name" type="text" placeholder="Hospital Name">
+          </div>
+          <div class="form-group">
+            <input class="form-control " name="address" type="text" placeholder="Address">
+          </div>
+          <div class="form-group">
+            <input class="form-control " name="city" type="text" placeholder="City">
+          </div>
+          <div class="form-group">
+            <input class="form-control " name="pincode" type="text" placeholder="Pincode">
+          </div>
+          <div class="form-group">
+            <input class="form-control " name="contact_number" type="telephone" placeholder="Contact Number">
+          </div>
+          <div class="form-group">
+            <input class="form-control " name="contact_number" type="telephone" placeholder="Optional Contact Number">
+          </div>
+          <div class="form-group">
+            <input class="form-control " name="end" type="text" placeholder=" In hh:mm Am to hh:mm PM Format">
+          </div>
+          <div class="form-group">
+            <input class="form-control " name="email" type="email" placeholder=" Email Address">
+          </div>
+          <div class="form-group">
+            <input class="form-control " name="img_url" type="url" placeholder=" Insert your image URL here">
+          </div>
+          <div class="form-group">
+              <textarea style="width:100%;" placeholder="Write your disclosure" max="800"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer ">
+          <button type="submit" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="Deactive" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title custom_align" id="Heading">Deactive Account</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure to deactive this account?</div>
+        </div>
+        <div class="modal-footer ">
+          <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL DISPLAY FOR DEACTIVE ACOOUNT OR EDIT INFORMATION END-->
+
+</section>
+
+
+<footer id="footer">
+  <div class="container">    
+    <div class="footer_list">          
+        <h4>Information</h4>
+        <ul class="footer_ui">
+            <li><a href="../Html/Services.html">Services</a></li>
+            <li><a href="../Html/Benefits.html">Benefits</a></li>
+            <li><a href="#section8">Developers</a></li>
+        </ul> 
+    </div>
+    <div class="footer_list">          
+        <h4>Follow Us</h4>
+        <ul class="footer_ui">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Google+</a></li>
+        </ul> 
+    </div>
+    <div class="footer_list">          
+        <h4>Contact Us</h4>
+        <ul class="footer_ui">
+            <li><a href="#">Email</a></li>
+            <li><a href="#" class="show-register" data-toggle="modal" data-target="#login-modal">Join Us</a></li>
+            <li><a href="../Html/Support.html">Support</a></li>
+        </ul> 
+    </div>
+    <div class="footer_list">          
+        <h4>Customer Service</h4>
+        <ul class="footer_ui">
+            <li><a href="../Html/AboutUs.html">About Us</a></li>
+            <li><a href="../Html/Feedback.html">Feedback</a></li>
+            <li><a href="../Html/PrivacyPolicy">Privacy Policy</a></li>
+        </ul> </div>
+    </div>
+    <center>
+        <h3 style="color: #eee;font-family: sans-serif;margin-bottom:0px;font-size:14px;cursor:default">&copy Copyright 2015 MediFinder Group | All rights reserved.</h3>
+    </center>
+  </div>
+</footer>
+</body>
+</html>
